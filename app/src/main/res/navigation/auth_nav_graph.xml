@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/auth_nav_graph"
+    app:startDestination="@id/home_Auth_Fragment">
+    <fragment
+        android:id="@+id/create_Auth_Fragment"
+        android:name="com.example.week3.ui.auth.fragment.Create_Auth_Fragment"
+        android:label="fragment_create__auth_"
+        tools:layout="@layout/fragment_create__auth_" >
+        <action
+            android:id="@+id/action_create_Auth_Fragment_to_login_Auth_Fragment"
+            app:destination="@id/login_Auth_Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/login_Auth_Fragment"
+        android:name="com.example.week3.ui.auth.fragment.Login_Auth_Fragment"
+        android:label="fragment_login__auth_"
+        tools:layout="@layout/fragment_login__auth_" >
+        <action
+            android:id="@+id/action_login_Auth_Fragment_to_verify_Auth_Fragment"
+            app:destination="@id/verify_Auth_Fragment" />
+        <action
+            android:id="@+id/action_login_Auth_Fragment_to_forgotPasswword_Auth_Fragment"
+            app:destination="@id/forgotPasswword_Auth_Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/home_Auth_Fragment"
+        android:name="com.example.week3.ui.auth.fragment.Home_Auth_Fragment"
+        android:label="fragment_home__auth_"
+        tools:layout="@layout/fragment_home__auth_" >
+        <action
+            android:id="@+id/action_home_Auth_Fragment_to_login_Auth_Fragment"
+            app:destination="@id/login_Auth_Fragment" />
+        <action
+            android:id="@+id/action_home_Auth_Fragment_to_create_Auth_Fragment"
+            app:destination="@id/create_Auth_Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/verify_Auth_Fragment"
+        android:name="com.example.week3.ui.auth.fragment.Verify_Auth_Fragment"
+        android:label="fragment_verify__auth_"
+        tools:layout="@layout/fragment_verify__auth_" />
+    <fragment
+        android:id="@+id/forgotPasswword_Auth_Fragment"
+        android:name="com.example.week3.ui.auth.fragment.ForgotPasswword_Auth_Fragment"
+        android:label="fragment_forgot_passwword__auth_"
+        tools:layout="@layout/fragment_forgot_passwword__auth_" />
+</navigation>

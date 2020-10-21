@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1066705304312",
+    "firebase_url": "https://week3-string-app.firebaseio.com",
+    "project_id": "week3-string-app",
+    "storage_bucket": "week3-string-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1066705304312:android:fc2636e5117ec57cae590d",
+        "android_client_info": {
+          "package_name": "com.example.week3"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1066705304312-djmag4grnd2a091po9tkhj9b5onu5uh6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDtqiVbBRG_PuXPAKb1LI8HaMJoWD_NV7A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1066705304312-djmag4grnd2a091po9tkhj9b5onu5uh6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
