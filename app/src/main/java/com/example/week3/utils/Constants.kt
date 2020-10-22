@@ -5,6 +5,7 @@ interface Constants {
     companion object {
         const val BASE_URL = "http://string-api.vinova.sg/api/"
         const val FCM_TOKEN="fcm_token - "
+        const val AUTHORIZATION = "Bearer "
 
         const val PREFS_NAME = "PREFERENCES"
         const val FIRST_TIME = "FIRST_TIME"

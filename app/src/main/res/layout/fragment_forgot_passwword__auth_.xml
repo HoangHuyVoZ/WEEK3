@@ -21,7 +21,7 @@
             tools:layout_editor_absoluteY="13dp">
 
             <ImageView
-                android:id="@+id/imageView3"
+                android:id="@+id/backForgot"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_right_dark"
@@ -40,7 +40,7 @@
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/imageView3"
+                app:layout_constraintStart_toStartOf="@+id/backForgot"
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.appbar.MaterialToolbar>
@@ -73,7 +73,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <EditText
-        android:id="@+id/edtEmail"
+        android:id="@+id/edtEmail_for"
         style="@style/Widget.AppCompat.Light.AutoCompleteTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -101,7 +101,32 @@
         android:text="SEND RESER LINK"
         android:textAlignment="center"
         android:textColor="#FFF"
+        android:id="@+id/btnSendlink"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtEmail" />
+        app:layout_constraintTop_toBottomOf="@+id/edtEmail_for" />
+
+    <ProgressBar
+        android:id="@+id/progressBarFor"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/notifyerrFor"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#E63C3C"
+        android:fontFamily="@font/noirpro_regular"
+        android:gravity="center"
+        android:text="You have entered an invalid email or password"
+        android:textAlignment="center"
+        android:textColor="#FFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>

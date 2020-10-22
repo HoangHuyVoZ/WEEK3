@@ -12,6 +12,9 @@
         <action
             android:id="@+id/action_create_Auth_Fragment_to_login_Auth_Fragment"
             app:destination="@id/login_Auth_Fragment" />
+        <action
+            android:id="@+id/action_create_Auth_Fragment_to_verify_Auth_Fragment"
+            app:destination="@id/verify_Auth_Fragment" />
     </fragment>
     <fragment
         android:id="@+id/login_Auth_Fragment"
@@ -24,6 +27,9 @@
         <action
             android:id="@+id/action_login_Auth_Fragment_to_forgotPasswword_Auth_Fragment"
             app:destination="@id/forgotPasswword_Auth_Fragment" />
+        <action
+            android:id="@+id/action_login_Auth_Fragment_to_interestFragment"
+            app:destination="@id/interestFragment" />
     </fragment>
     <fragment
         android:id="@+id/home_Auth_Fragment"
@@ -41,10 +47,46 @@
         android:id="@+id/verify_Auth_Fragment"
         android:name="com.example.week3.ui.auth.fragment.Verify_Auth_Fragment"
         android:label="fragment_verify__auth_"
-        tools:layout="@layout/fragment_verify__auth_" />
+        tools:layout="@layout/fragment_verify__auth_" >
+        <action
+            android:id="@+id/action_verify_Auth_Fragment_to_home_Auth_Fragment"
+            app:destination="@id/home_Auth_Fragment" />
+    </fragment>
     <fragment
         android:id="@+id/forgotPasswword_Auth_Fragment"
         android:name="com.example.week3.ui.auth.fragment.ForgotPasswword_Auth_Fragment"
         android:label="fragment_forgot_passwword__auth_"
         tools:layout="@layout/fragment_forgot_passwword__auth_" />
+    <fragment
+        android:id="@+id/interestFragment"
+        android:name="com.example.week3.ui.auth.fragment.InterestFragment"
+        android:label="fragment_interest"
+        tools:layout="@layout/fragment_interest" >
+        <action
+            android:id="@+id/action_interestFragment_to_followFragment"
+            app:destination="@id/followFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/followFragment"
+        android:name="com.example.week3.ui.auth.fragment.FollowFragment"
+        android:label="fragment_follow"
+        tools:layout="@layout/fragment_follow" >
+        <action
+            android:id="@+id/action_followFragment_to_notificationFragment"
+            app:destination="@id/notificationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/notificationFragment"
+        android:name="com.example.week3.ui.auth.fragment.NotificationFragment"
+        android:label="fragment_notification"
+        tools:layout="@layout/fragment_notification" >
+        <action
+            android:id="@+id/action_notificationFragment_to_locationFragment"
+            app:destination="@id/locationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/locationFragment"
+        android:name="com.example.week3.ui.auth.fragment.LocationFragment"
+        android:label="fragment_location"
+        tools:layout="@layout/fragment_location" />
 </navigation>

@@ -32,9 +32,13 @@
     <string name="forgot">Forgot Password</string>
     <string name="enter_your_email...">Enter your email address below and follow the
         \ninstructions in the email we’ll send you.</string>
-    <string name="mail_verify">A verification email has been sent to:
-    \n<b>%1$s</b>
-    \n\nCheck your email and click on the verification link
-    \nto activate your account.</string>
+    <string name="mail_verify">A verification email has been sent to:</string>
     <string name="Create">Create Account</string>
+    <string name="name_mail1">Check your email and click on the verification link
+    \nto activate your account.</string>
+    <string name="more">%1$d more</string>
+    <string name="interest">Select at least 3 tags that represents your \ninterests</string>
+    <string name="follow">Add some suggested users from the comunity</string>
+    <string name="notification">Be in the know whenever you \nreceive messages, new followers \nand more</string>
+    <string name="location">Share your location to help us \nfind the best places near you</string>
 </resources>

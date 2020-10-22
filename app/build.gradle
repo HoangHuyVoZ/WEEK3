@@ -23,9 +23,7 @@ android {
     buildFeatures {
         viewBinding = true
     }
-    dataBinding{
-        enabled=true
-    }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -73,6 +71,7 @@ dependencies {
 
     implementation 'com.facebook.stetho:stetho:1.5.1'
     implementation 'com.facebook.stetho:stetho-okhttp3:1.5.1'
-
+    //swipe
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.0.0'
 
 }
