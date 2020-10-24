@@ -28,16 +28,12 @@ class ListItineraryAdapter ( private val list: ArrayList<Itinerary>):
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(list: Itinerary, position: Int) {
-            if (list.photos != null) {
-                Glide.with(itemView)
-                    .load(list.photos.url.medium)
-                    .error(R.drawable.noimage)
-                    .into(itemView.imag_iti)
-                itemView.tv_title_iti_list.text = list.title
-            }else{
-                itemView.tv_title_iti_list.gone()
-                itemView.imag_iti.gone()
-            }
+
+            Glide.with(itemView)
+                .load(list.photos.url.medium)
+                .error(R.drawable.noimage)
+                .into(itemView.imag_iti)
+            itemView.tv_title_iti_list.text = list.title
         }
     }
 

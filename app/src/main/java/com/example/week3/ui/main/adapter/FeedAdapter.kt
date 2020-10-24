@@ -50,26 +50,28 @@ class FeedAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
             itemView.tv_des_iti.text = feed.description
             itemView.tv_heard_iti.text = feed.likeCounter.toString()
             itemView.tv_comment_iti.text = feed.commentCounter.toString()
-            if(feed.isLiked){
+            if (feed.isLiked) {
                 Glide.with(itemView)
                     .load(R.drawable.ic_ico_heart)
                     .into(itemView.like_ite)
-            }else{
+            } else {
                 Glide.with(itemView)
                     .load(R.drawable.ic_ico_heart_noselect)
                     .into(itemView.like_ite)
             }
-            if(feed.isString){
+            if (feed.isString) {
                 itemView.btnString.isSelected = true
-                itemView.btnString.text=feed.strungCounter.toString()
-                itemView.btnString.setTextColor( ContextCompat.getColorStateList(
-                    itemView.context,
-                    R.color.colorWhite
-                ))
+                itemView.btnString.text = feed.strungCounter.toString()
+                itemView.btnString.setTextColor(
+                    ContextCompat.getColorStateList(
+                        itemView.context,
+                        R.color.colorWhite
+                    )
+                )
                 itemView.btnSave.setCompoundDrawablesWithIntrinsicBounds(
                     itemView.context.getDrawable(R.drawable.ic_string_selected), null, null, null
                 )
-            }else{
+            } else {
                 itemView.btnString.isSelected = false
                 itemView.btnString.setTextColor(
                     ContextCompat.getColorStateList(
@@ -86,7 +88,7 @@ class FeedAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
                 .load(feed.user?.profilePhoto)
                 .error(R.drawable.profile_selector)
                 .into(itemView.image_user_iti)
-            if(feed.itineraries!=null){
+            if (feed.itineraries != null) {
                 itemView.recyclerViewIti.apply {
                     layoutManager =
                         LinearLayoutManager(
@@ -183,21 +185,10 @@ class FeedAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
                 itemView.image_post3_grad.gone()
                 itemView.count_list.gone()
             }
-            if (feed.photos == null) {
+            feed.photos?.let { photos ->
                 itemView.videos.gone()
-                itemView.image_post_list1.gone()
-                itemView.image_post2_list1.gone()
-                itemView.image_grad_lis1.gone()
-                itemView.image_post_list2.gone()
-                itemView.image_post2_list2.gone()
-                itemView.image_post2_list3.gone()
-                itemView.image_grad_lis2.gone()
-                itemView.image_post3_grad.gone()
-                itemView.count_list.gone()
-                itemView.image_post.gone()
-            } else {
-                when {
-                    feed.photos?.size == 1 -> {
+                when (photos.size) {
+                    1 -> {
 
                         Glide.with(itemView)
                             .load(feed.photos[0].url.original)
@@ -215,7 +206,7 @@ class FeedAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
                         itemView.image_post3_grad.gone()
                         itemView.count_list.gone()
                     }
-                    feed.photos?.size == 2 -> {
+                    2 -> {
                         itemView.image_post.gone()
                         itemView.image_post_list2.gone()
                         itemView.image_post2_list2.gone()
@@ -235,7 +226,7 @@ class FeedAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
                             .into(itemView.image_post2_list1)
 
                     }
-                    feed.photos?.size == 3 -> {
+                    3 -> {
                         itemView.image_post.gone()
                         itemView.image_post_list1.gone()
                         itemView.image_post2_list1.gone()
@@ -257,12 +248,14 @@ class FeedAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
                             .error(R.drawable.noimage)
                             .into(itemView.image_post2_list3)
                     }
-                    feed.photos?.size!! >= 4 -> {
+                    else -> {
                         itemView.image_post.gone()
                         itemView.image_post_list1.gone()
                         itemView.image_post2_list1.gone()
                         itemView.image_grad_lis1.gone()
                         itemView.videos.gone()
+
+                        itemView.count_list.text = (feed.photos.size - 3).toString()
 
                         Glide.with(itemView)
                             .load(feed.photos[0].url.original)
@@ -294,11 +287,11 @@ class FeedAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
             itemView.tv_loaction.text = feed.address
             itemView.tv_heard_poi.text = feed.likeCounter.toString()
             itemView.tv_comment_poi.text = feed.commentCounter.toString()
-            if(feed.isLiked){
+            if (feed.isLiked) {
                 Glide.with(itemView)
                     .load(R.drawable.ic_ico_heart)
                     .into(itemView.heard_poi)
-            }else{
+            } else {
                 Glide.with(itemView)
                     .load(R.drawable.ic_ico_heart_noselect)
                     .into(itemView.heard_poi)
@@ -316,10 +309,15 @@ class FeedAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
                     .load(feed.photos?.get(0)?.url?.medium)
                     .error(R.drawable.noimage)
                     .into(itemView.image_poi)
-                if(feed.tags!=null){
+                if (feed.tags != null) {
                     itemView.recyclerView_tag.apply {
                         layoutManager =
-                            GridLayoutManager(itemView.recyclerView_tag.context, 4, GridLayoutManager.VERTICAL, false)
+                            GridLayoutManager(
+                                itemView.recyclerView_tag.context,
+                                4,
+                                GridLayoutManager.VERTICAL,
+                                false
+                            )
                         adapter = ListTagAdapter(feed.tags as ArrayList<Tag>)
                         setRecycledViewPool(viewPool)
                     }
@@ -348,7 +346,7 @@ class FeedAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
                 LayoutInflater.from(parent.context).inflate(R.layout.item_itinerary, parent, false)
             )
 
-            1-> ViewPostViewHolder(
+            1 -> ViewPostViewHolder(
                 LayoutInflater.from(parent.context).inflate(R.layout.item_post, parent, false)
             )
 
@@ -367,9 +365,9 @@ class FeedAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         val element = list?.get(position)
         when (holder) {
-            is ViewIntiViewHolder -> holder.bind(  position)
-            is ViewPostViewHolder -> holder.bind( position)
-            is ViewPoiViewHolder -> holder.bind( position)
+            is ViewIntiViewHolder -> holder.bind(position)
+            is ViewPostViewHolder -> holder.bind(position)
+            is ViewPoiViewHolder -> holder.bind(position)
             else -> throw IllegalArgumentException()
         }
 

@@ -34,7 +34,6 @@ class FeedFragment : Fragment() {
     lateinit var feedViewModel: FeedViewModel
     lateinit var layoutManager: LinearLayoutManager
     lateinit var adapter: FeedAdapter
-    var Count = 1
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -45,6 +44,7 @@ class FeedFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         init()
+        addScrolListener()
         notifyerr_feed.invisible()
         feedViewModel.dataFeed.observe(viewLifecycleOwner, Observer {
             if (it != null) {
@@ -57,11 +57,11 @@ class FeedFragment : Fragment() {
                     })
                 }
 
-            }else{
+            } else {
                 progress_feed.invisible()
                 notifyerr_feed.visible()
                 notifyerr_feed.setOnClickListener {
-                    val intent = Intent (activity, AuthActivity::class.java)
+                    val intent = Intent(activity, AuthActivity::class.java)
                     activity?.startActivity(intent)
                 }
             }
@@ -87,17 +87,43 @@ class FeedFragment : Fragment() {
         )
         val accessToken = pref.getString(Constants.ACCESS_TOKEN, "")
         if (accessToken != null) {
+//            feedViewModel.current_pageCount.observe(viewLifecycleOwner, Observer {
+                feedViewModel.getFeed(
+                    1,
+                    Constants.AUTHORIZATION + accessToken,
+                    10
+                )
+//            })
 
-            feedViewModel.getFeed(
-                1,
-                Constants.AUTHORIZATION + accessToken,
-                0
-            )
 
         }
-
-
     }
+    fun addScrolListener() {
+        recyclerView_feed.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                val pastVisibleItem = layoutManager.findLastVisibleItemPosition()
 
+                val total = adapter.itemCount
+                Log.d("a", (pastVisibleItem).toString())
+                val pref = requireContext().getSharedPreferences(
+                    Constants.PREFS_NAME,
+                    AppCompatActivity.MODE_PRIVATE
+                )
+                val accessToken = pref.getString(Constants.ACCESS_TOKEN, "")
+                if ( pastVisibleItem == total - 1) {
+                    feedViewModel.current_pageCount.value = ++feedViewModel.CountPage
+                    feedViewModel.current_pageCount.observe(viewLifecycleOwner, Observer {
+                        feedViewModel.getFeed(
+                            it,
+                            Constants.AUTHORIZATION + accessToken,
+                            10
+                        )
+                    })
+                }
+                super.onScrolled(recyclerView   , dx, dy)
+            }
+
+        })
+    }
 
 }

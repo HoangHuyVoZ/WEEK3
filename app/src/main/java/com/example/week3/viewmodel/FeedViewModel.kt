@@ -14,8 +14,8 @@ import retrofit2.Response
 class FeedViewModel :ViewModel() {
     var dataFeed: MutableLiveData<Feed> = MutableLiveData<Feed>()
     var dataFeedList: MutableLiveData<List<FeedData>> = MutableLiveData<List<FeedData>>()
-    var errorData = MutableLiveData<Boolean>().apply { value = false }
-
+    var current_pageCount: MutableLiveData<Int> =MutableLiveData<Int>(1)
+    var CountPage =1
 
     fun getFeed(page: Int, accesstoken: String, current_page: Int){
         val request = API.buildService(ApiServer::class.java)
@@ -31,8 +31,6 @@ class FeedViewModel :ViewModel() {
                 if (response.isSuccessful) {
                         dataFeed?.postValue(response.body())
                         dataFeedList?.postValue(response.body()?.data)
-                    errorData.value = false
-
                 } else {
                     dataFeed?.postValue(null)
                     dataFeedList?.postValue(null)
