@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/poi_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="24dp"
+            android:src="@drawable/ic_poi" />
+
+        <TextView
+            android:id="@+id/tv_title_poi"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_toRightOf="@+id/poi_icon"
+            android:fontFamily="@font/noirpro_bold"
+            android:paddingLeft="5dp"
+            android:text="The Garden of Morning Calm"
+            android:textColor="#000"
+            android:textSize="20dp" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/emty"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"></ImageView>
+        <TextView
+            android:id="@+id/tv_loaction"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_title_poi"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/poi_icon"
+            android:fontFamily="@font/noirpro_medium"
+            android:paddingLeft="5dp"
+            android:text="The Garden of Morning Calm"
+            android:textColor="#838383"
+            android:textSize="12dp" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_loaction"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="8dp">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/image_poi"
+                    android:layout_width="350dp"
+                    android:layout_height="350dp"
+                    android:scaleType="fitXY"
+                    android:background="@color/colorGrayEnable" />
+
+                <ImageView
+                    android:id="@+id/image_grad_poi"
+                    android:layout_width="350dp"
+                    android:layout_height="350dp"
+                    android:src="@drawable/ic_grad" />
+
+
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/image_user_poi"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="15dp"
+                    android:adjustViewBounds="false"
+                    app:civ_border_width="2dp"></de.hdodenhof.circleimageview.CircleImageView>
+
+                <TextView
+                    android:id="@+id/tv_user_po"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_toRightOf="@id/image_user_poi"
+                    android:fontFamily="@font/noirpro_medium"
+                    android:text="dsdasfadfadf"
+                    android:textColor="#FFF"
+                    android:textSize="15dp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="20dp"
+                    android:id="@+id/start_poi"
+                    android:layout_toRightOf="@id/tv_user_po"
+                    android:src="@drawable/ic_star_circle" />
+
+
+                    <ImageView
+                        android:id="@+id/image_poi_no"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/img"></ImageView>
+
+                    <ImageView
+                        android:id="@+id/image_location_no"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ico_no"></ImageView>
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView_tag"
+            android:layout_width="350dp"
+            tools:listitem="@layout/item_lisst_tag"
+            tools:itemCount="1"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/card"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp" />
+
+        <ImageView
+            android:id="@+id/heard_poi"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_below="@id/recyclerView_tag"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/ic_ico_heart"></ImageView>
+
+        <TextView
+            android:id="@+id/tv_heard_poi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/recyclerView_tag"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/heard_poi"
+            android:text="420"
+            android:textColor="#000"
+            android:textSize="20dp"></TextView>
+
+        <ImageView
+            android:id="@+id/comment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/recyclerView_tag"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/tv_heard_poi"
+            android:src="@drawable/ic_ico_comment"></ImageView>
+
+        <TextView
+            android:id="@+id/tv_comment_poi"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_below="@id/recyclerView_tag"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/comment"
+            android:text="420"
+            android:textColor="#000"
+            android:textSize="20dp"></TextView>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/recyclerView_tag"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:src="@drawable/ic_ico__more" />
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

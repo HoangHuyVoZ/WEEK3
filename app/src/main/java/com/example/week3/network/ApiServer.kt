@@ -1,5 +1,6 @@
 package com.example.week3.network
 
+import com.example.week3.model.feed.Feed
 import com.example.week3.model.follow.FollowData
 import com.example.week3.model.interest.Interest
 import com.example.week3.model.user.UserResponse
@@ -54,4 +55,12 @@ interface ApiServer {
         @Header("Authorization") authorization: String,
         @Query("users_id") userID: Int
     ): Call<UserResponse>
+
+    @GET("feed")
+    fun getFeed(
+        @Header("Authorization") authentication: String,
+        @Query("page") page: Int,
+        @Query("current_per_page") currentPerPage: Int
+    ): Call<Feed>
+
 }

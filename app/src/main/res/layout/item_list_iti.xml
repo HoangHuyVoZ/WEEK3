@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="8dp"
+    android:layout_margin="8dp"
+    android:elevation="8dp">
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imag_iti"
+            android:layout_width="168dp"
+            android:layout_height="170dp"
+            android:scaleType="fitXY"
+            android:background="#F1f" />
+
+        <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_grad"/>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_poi"
+        android:layout_marginTop="10dp"
+        android:id="@+id/locaion"
+        android:layout_marginLeft="10dp"/>
+    <TextView
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:textColor="#FFF"
+        android:textSize="12dp"
+        android:id="@+id/tv_title_iti_list"
+        android:fontFamily="@font/noirpro_medium"
+        android:layout_toRightOf="@+id/locaion"
+        android:layout_marginTop="10dp"
+        android:text="fdgsdgsdgsdgsdgsdgdsgsdgsdgsdgsdgsdsfdg"/>
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

@@ -14,6 +14,9 @@ class View {
         fun View.invisible() {
             this.visibility = View.INVISIBLE
         }
+        fun View.gone() {
+            this.visibility = View.GONE
+        }
         fun isValidEmail(input: String): Boolean {
             return input.trim().isNotEmpty() && Patterns.EMAIL_ADDRESS.matcher(input).matches()
         }

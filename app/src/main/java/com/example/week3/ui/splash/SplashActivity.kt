@@ -18,7 +18,7 @@ class SplashActivity : AppCompatActivity() {
         Handler().postDelayed({
             val pref = getSharedPreferences(PREFS_NAME, AppCompatActivity.MODE_PRIVATE)
             val firstTime= pref.getBoolean(FIRST_TIME,true)
-            if(!firstTime){
+            if(firstTime){
                 startActivity(Intent(this, IntroActivity::class.java))
             }else{
                 startActivity(Intent(this, MainActivity::class.java))

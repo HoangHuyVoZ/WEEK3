@@ -25,6 +25,7 @@ import com.example.week3.model.follow.Follow
 import com.example.week3.model.interest.InterestData
 import com.example.week3.utils.Constants
 import com.example.week3.utils.OnClickItem
+import de.hdodenhof.circleimageview.CircleImageView
 import kotlinx.android.synthetic.main.item_interest.view.*
 
 class FollowAdapter( val onClickItem: OnClickItem) : RecyclerView.Adapter<FollowAdapter.ViewHolder>() {
@@ -33,7 +34,7 @@ class FollowAdapter( val onClickItem: OnClickItem) : RecyclerView.Adapter<Follow
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var title: TextView = itemView.tv_user
         var image1: ImageView = itemView.imageUser
-        var imageUser: ImageView = itemView.imageFollow
+        var imageUser: CircleImageView = itemView.imageFollow
         var image2: ImageView = itemView.imageUser2
         var image3: ImageView = itemView.imageUser3
         var tv_follow: TextView=itemView.btn_next_Fol

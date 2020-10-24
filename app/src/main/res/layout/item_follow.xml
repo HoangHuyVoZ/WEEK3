@@ -11,21 +11,16 @@
         android:layout_width="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_marginLeft="20dp"
-
         android:layout_height="wrap_content">
-        <androidx.cardview.widget.CardView
-            android:id="@+id/card"
-            android:layout_width="60dp"
-            app:cardCornerRadius="60dp"
-            android:layout_height="60dp">
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scaleType="fitXY"
-                android:background="@color/colorPrimary"
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:scaleType="centerCrop"
+                android:adjustViewBounds="false"
+                app:civ_border_width="3dp"
+                app:civ_border_color="@color/colorPrimary"
                 android:id="@+id/imageFollow"
-                ></ImageView>
-        </androidx.cardview.widget.CardView>
+                ></de.hdodenhof.circleimageview.CircleImageView>
         <TextView
             android:id="@+id/tv_user"
             android:layout_width="150dp"
@@ -33,14 +28,14 @@
             android:text="fdsfsdfsdf"
             android:fontFamily="@font/noirpro_bold"
             android:textColor="#000"
-            android:layout_toRightOf="@id/card"
+            android:layout_toRightOf="@id/imageFollow"
             android:layout_marginLeft="20dp"/>
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_star_circle"
             android:layout_below="@id/tv_user"
-            android:layout_toRightOf="@id/card"
+            android:layout_toRightOf="@id/imageFollow"
             android:layout_marginTop="5dp"
             android:layout_marginLeft="20dp"/>
 
@@ -62,7 +57,7 @@
         <androidx.cardview.widget.CardView
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_below="@id/card"
+            android:layout_below="@id/imageFollow"
             android:id="@+id/card3"
             android:layout_marginRight="5dp"
             android:layout_toRightOf="@id/card2"
@@ -78,7 +73,7 @@
     <androidx.cardview.widget.CardView
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_below="@id/card"
+        android:layout_below="@id/imageFollow"
         android:id="@+id/card1"
         android:layout_marginLeft="25dp"
         android:layout_marginRight="5dp"
@@ -97,7 +92,7 @@
             android:id="@+id/card2"
             android:layout_marginRight="5dp"
             android:layout_toRightOf="@id/card1"
-            android:layout_below="@id/card"
+            android:layout_below="@id/imageFollow"
             app:cardCornerRadius="8dp"
             android:layout_marginTop="15dp">
 

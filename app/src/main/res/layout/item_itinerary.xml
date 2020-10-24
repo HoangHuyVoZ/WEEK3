@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tv_title_Iti"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:fontFamily="@font/noirpro_bold"
+            android:paddingLeft="5dp"
+            android:text="The Garden of Morning Calm"
+            android:textColor="#000"
+            android:textSize="22dp" />
+        <Button
+            android:id="@+id/btnString"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/save_selector"
+            android:drawableStart="@drawable/ic_string"
+            android:paddingLeft="10dp"
+            android:fontFamily="@font/noirpro_medium"
+            android:text="STRING"
+            android:textColor="@color/colorPrimary"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewIti"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_title_Iti"
+            tools:itemCount="1"
+            tools:listitem="@layout/item_list_iti"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="19dp" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/image_user_iti"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_below="@+id/recyclerViewIti"
+            android:layout_marginTop="15dp"
+            android:adjustViewBounds="false"
+            app:civ_border_width="2dp"></de.hdodenhof.circleimageview.CircleImageView>
+        <TextView
+            android:id="@+id/tv_user_po"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_below="@id/recyclerViewIti"
+            android:layout_toRightOf="@id/image_user_iti"
+            android:fontFamily="@font/noirpro_medium"
+            android:text="dsdasfadfadf"
+            android:textColor="#000"
+            android:textSize="15dp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@id/recyclerViewIti"
+            android:layout_toRightOf="@id/tv_user_po"
+            android:src="@drawable/ic_star_circle" />
+        <TextView
+            android:id="@+id/tv_des_iti"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_below="@id/image_user_iti"
+            android:fontFamily="@font/noirpro_regular"
+            android:layout_centerHorizontal="true"
+            android:text="dsfsdgdfhfghfghgsfgsdgsdgsdsfhdfhsdgsdgsdgsdgdsdgsdgsdsfgsgdfgfb"
+            android:textColor="#000"
+            android:textSize="15dp" />
+        <ImageView
+            android:id="@+id/like_ite"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_below="@id/tv_des_iti"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/ic_ico_heart"></ImageView>
+
+        <TextView
+            android:id="@+id/tv_heard_iti"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_des_iti"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/like_ite"
+            android:text="420"
+            android:textColor="#000"
+            android:textSize="20dp"></TextView>
+
+        <ImageView
+            android:id="@+id/comment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_des_iti"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/tv_heard_iti"
+            android:src="@drawable/ic_ico_comment"></ImageView>
+
+        <TextView
+            android:id="@+id/tv_comment_iti"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_below="@id/tv_des_iti"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/comment"
+            android:text="420"
+            android:textColor="#000"
+            android:textSize="20dp"></TextView>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_des_iti"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:src="@drawable/ic_ico__more" />
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

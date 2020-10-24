@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/image_user_post"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:adjustViewBounds="false"
+            app:civ_border_width="2dp"></de.hdodenhof.circleimageview.CircleImageView>
+
+        <TextView
+            android:id="@+id/tv_user_post"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_toRightOf="@id/image_user_post"
+            android:fontFamily="@font/noirpro_medium"
+            android:text="dsdasfadfadf"
+            android:textColor="#000"
+            android:textSize="16dp" />
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_user_post"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@id/image_user_post"
+            android:fontFamily="@font/noirpro_medium"
+            android:text="dsdasfadfadf"
+            android:textColor="#838383"
+            android:textSize="10dp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="20dp"
+            android:scaleType="fitXY"
+            android:layout_toRightOf="@id/tv_user_post"
+            android:src="@drawable/ic_star_circle" />
+
+        <TextView
+            android:id="@+id/tv_des_post"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_time"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/noirpro_regular"
+            android:text="dsdasfadfadf"
+            android:textColor="#000"
+            android:textSize="15dp" />
+
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:fontFamily="@font/noirpro_medium"
+            android:background="@drawable/save_selector"
+            android:drawableStart="@drawable/ic_save"
+            android:paddingLeft="10dp"
+            android:text="SAVE"
+            android:textColor="@color/colorPrimary"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewPost_tag"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_des_post"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            tools:itemCount="1"
+            tools:listitem="@layout/item_lisst_tag" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card"
+            android:layout_width="350dp"
+            android:layout_height="350dp"
+            android:layout_below="@id/recyclerViewPost_tag"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="8dp">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                //layout4
+                <ImageView
+                    android:id="@+id/image_post3_grad"
+                    android:layout_width="170dp"
+                    android:layout_toRightOf="@id/image_post2_list2"
+                    android:layout_marginLeft="10dp"
+                    android:layout_below="@id/image_post_list2"
+                    android:layout_height="170dp"
+                    android:scaleType="fitXY"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/ic_grad_checkted" />
+                <TextView
+                    android:id="@+id/count_list"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+5"
+                    android:fontFamily="@font/noirpro_bold"
+                    android:textColor="#FFFFFF"
+                    android:textSize="40dp"
+                    android:layout_marginTop="240dp"
+                    android:layout_marginLeft="235dp"
+                    ></TextView>
+
+                //layout3
+                <ImageView
+                    android:id="@+id/image_post_list2"
+                    android:layout_width="350dp"
+                    android:layout_height="170dp"
+                    android:scaleType="fitXY"
+                    android:background="@color/colorGrayEnable" />
+                <ImageView
+                    android:id="@+id/image_post2_list2"
+                    android:layout_width="170dp"
+                    android:layout_below="@id/image_post_list2"
+                    android:layout_height="170dp"
+                    android:scaleType="fitXY"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/colorGrayEnable" />
+                <ImageView
+                    android:id="@+id/image_post2_list3"
+                    android:layout_width="170dp"
+                    android:scaleType="fitXY"
+                    android:layout_toRightOf="@id/image_post2_list2"
+                    android:layout_marginLeft="10dp"
+                    android:layout_below="@id/image_post_list2"
+                    android:layout_height="170dp"
+                    android:layout_marginTop="10dp"
+                    />
+
+                <ImageView
+                    android:id="@+id/image_grad_lis2"
+                    android:layout_width="350dp"
+                    android:scaleType="fitXY"
+                    android:layout_height="170dp"
+                    android:src="@drawable/ic_grad2" />
+
+
+
+                //layout2
+                <ImageView
+                    android:id="@+id/image_post_list1"
+                    android:layout_width="350dp"
+                    android:layout_height="170dp"
+                    android:scaleType="fitXY"
+                    android:background="@color/colorGrayEnable" />
+                <ImageView
+                    android:id="@+id/image_post2_list1"
+                    android:layout_width="350dp"
+                    android:layout_below="@id/image_post_list1"
+                    android:layout_height="170dp"
+                    android:scaleType="fitXY"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/colorGrayEnable" />
+                <ImageView
+                    android:id="@+id/image_grad_lis1"
+                    android:layout_width="350dp"
+                    android:scaleType="fitXY"
+                    android:layout_height="170dp"
+                    android:src="@drawable/ic_grad2" />
+
+                //layout1
+                                <ImageView
+                                    android:id="@+id/image_post"
+                                    android:layout_width="350dp"
+                                    android:layout_height="350dp"
+                                    android:scaleType="fitXY"
+                                    android:background="@color/colorGrayEnable" />
+                                <ImageView
+                                    android:id="@+id/image_grad"
+                                    android:layout_width="350dp"
+                                    android:scaleType="fitXY"
+                                    android:layout_height="350dp"
+                                    android:src="@drawable/ic_grad" />
+                                <ImageView
+                                    android:id="@+id/locaion"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/ic_poi"
+                                    android:scaleType="fitXY"
+                                    android:layout_marginTop="15dp"
+                                    android:layout_marginLeft="20dp"/>
+                                <TextView
+                                    android:id="@+id/tv_post_location"
+                                    android:layout_width="200dp"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="#fff"
+                                    android:text="fdfsdfgsdgdfhdfgsd"
+                                    android:layout_toRightOf="@id/locaion"
+                                    android:layout_marginTop="15dp"
+                                    android:layout_marginLeft="10dp"
+                                    android:fontFamily="@font/noirpro_medium"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/videos"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/videos"/>
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <ImageView
+            android:id="@+id/like_Post"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_below="@id/card"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/ic_ico_heart"></ImageView>
+
+        <TextView
+            android:id="@+id/tv_heard_post"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/card"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/like_Post"
+            android:text="420"
+            android:textColor="#000"
+            android:textSize="20dp"></TextView>
+
+        <ImageView
+            android:id="@+id/comment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/card"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/tv_heard_post"
+            android:src="@drawable/ic_ico_comment"></ImageView>
+
+        <TextView
+            android:id="@+id/tv_comment_post"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_below="@id/card"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/comment"
+            android:text="420"
+            android:textColor="#000"
+            android:textSize="20dp"></TextView>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/card"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:src="@drawable/ic_ico__more" />
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>
